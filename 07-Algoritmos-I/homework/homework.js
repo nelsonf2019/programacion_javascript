@@ -18,27 +18,22 @@ function factorear(num) {
     }
     return array;
   }
-function bubbleSort(array) {
-  // Implementar el método conocido como bubbleSort para ordenar de menor a mayor
-  // el array recibido como parámetro
-  // Devolver el array ordenado resultante
-  // Tu código:
-  let des = true;
-  while(des)
-  //mienstras este desordenado
-  des = false;
-
-  for (let i = 0; i < array.length; i++) {
-      if(array[i] < array[i+1]){
-        let dato = array[i];
-        array[i] = array[i+1]
-        array[i+1] = dato;
+  function bubbleSort(array) {
+    // Implementar el método conocido como bubbleSort para ordenar de menor a mayor
+    // el array recibido como parámetro
+    // Devolver el array ordenado resultante
+    // Tu código:
+    for (let i = 0; i < array.length - 1; i++) {
+      let aux;
+      if (array[i] > array[i+1]) {
+        aux = array[i+1];
+        array[i+1] = array[i];
+        array[i] = aux;
+        return bubbleSort(array);
       }
-      des = true;
     }
-    return array;
-}
-
+    return array
+  }
 
 function insertionSort(array) {
   // Implementar el método conocido como insertionSort para ordenar de menor a mayor
